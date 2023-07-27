@@ -27,14 +27,10 @@ const authFilter = async (req, res, next) => {
       next();
     } catch (error) {
       if (error instanceof jwt.TokenExpiredError) {
-        return res.status(401).json({ error: 'Token expired' });
+        return res.status(401).json({ error: 'Token is expired' });
       }
 
-      if (error instanceof jwt.JsonWebTokenError) {
-        return res.status(401).json({ error: 'Invalid token' });
-      }
-
-      res.status(401).json({ error: 'Unauthorized' });
+      res.status(401).json({ error: 'Invalid Token' });
     }
   } catch (error) {
     console.error('Exception:', error);

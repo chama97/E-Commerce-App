@@ -86,7 +86,7 @@ router.get('/:id', authenticateToken, async (req, res) => {
 
 
 // Delete Customer By ID 
-router.put('/remove/:id', authenticateToken, async (req, res) => {
+router.put('/remove', authenticateToken, async (req, res) => {
     const customerId = req.params.id;
     try {
         const customer = await Customer.findOne({ id: customerId });

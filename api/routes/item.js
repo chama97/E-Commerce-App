@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
         cb(null, 'D:/GDSE_57/CourseWork/E-Commerce-App/api/uploads');
     },
     filename: (req, file, cb) => {
-        cb(file.originalname);
+        cb(null,file.originalname);
     },
 });
 const upload = multer({ storage });
