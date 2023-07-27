@@ -1,0 +1,36 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(247, 247, 255);
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 35%;
+    background-color: rgb(255, 255, 255);
+}
+
+.box-body {
+    margin-top: 70px;
+    margin-bottom: 40px;
+    width: 90%;
+    height: auto;
+}
+
+.input {
+    // height: 45px;
+    margin-bottom: 10px,
+}
+
+.button {
+    height: 47px;
+    font-weight: bold;
+    margin-top: 10px,
+}
