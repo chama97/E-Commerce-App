@@ -25,11 +25,17 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  const handleLogout = () => {
+    console.log('Logout clicked!');
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  };
+
   return (
-    <AppBar style={{height:"100%", boxShadow: 'none'}} position="static">
+    <AppBar style={{ height: "100%", boxShadow: 'none' }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,fontSize: '2rem' }} />
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: '2rem' }} />
           <Typography
             variant="h5"
             noWrap
@@ -60,7 +66,7 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1,fontSize: '2rem' }} />
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, fontSize: '2rem' }} />
           <Typography
             variant="h5"
             noWrap
@@ -103,7 +109,7 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={setting === 'Logout' ? handleLogout : handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
